@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html align="middle">
+	<head>
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+	</head>
+
+	<body>
+		<h1>Hello server</h1>
+		<input text="field" id="username" placeholder="username">
+		<input text="field" id="password" placeholder="password">
+		<button id="submit">Kliko</button>
+	</body>
+	<script>
+		$(document).ready(function() {
+			$('#submit').on('click',function(){
+				$.ajax({
+					url: '/',
+					type:'POST',
+					data:{
+						username: $('#username').val(),
+						password: $('#password').val()
+					}
+				})
+			});
+		});
+	</script>
+</html>
